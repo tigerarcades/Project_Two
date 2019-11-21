@@ -280,3 +280,18 @@ dict_consumption = {
     'CL6': 'Used in Last Day'
 }
 
+
+def denormalize(data_frame):
+    mapping = {'Ethnicity': dict_ethnicity,
+               'Country': dict_country,
+               'Education': dict_education,
+               'Age': dict_age,
+               'Gender': dict_gender,
+               'Nscore': dict_nscore,
+               'Escore': dict_escore,
+               'Oscore': dict_oscore,
+               'Ascore': dict_ascore,
+               'Cscore': dict_cscore}
+    for k, v in mapping.items():
+        print(k)
+        data_frame[k] = data_frame[k].map(v)
