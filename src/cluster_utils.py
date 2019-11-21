@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 feature_names = ['Age', 'Gender', 'Education', 'Country', 'Ethnicity',
                  'Nscore', 'Escore', 'Oscore', 'Ascore', 'Cscore',
                  'Impulsive', 'SS']
-# feature_names = ['Nscore', 'Escore', 'Oscore', 'Ascore', 'Cscore',
+# feature_names = ['Ns  core', 'Escore', 'Oscore', 'Ascore', 'Cscore',
 #                  'Impulsive', 'SS']
 
 origin = pd.read_excel('../drug_consumption.xls')
@@ -82,4 +82,8 @@ import matplotlib.pyplot as plt
 
 xgb.plot_tree(xg_reg, num_trees=0)
 plt.rcParams['figure.figsize'] = [50, 10]
+plt.show()
+
+xgb.plot_importance(xg_reg)
+plt.rcParams['figure.figsize'] = [5, 5]
 plt.show()
